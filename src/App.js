@@ -4,7 +4,7 @@ import Results from './components/results'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/'>
       <div className="container">
         <Switch>
           <Route exact path='/' component={Home} />
