@@ -2,32 +2,57 @@ import { useEffect, useState} from 'react'
 import Question from './question'
 
 const Home = () => {
-  const [currentQuestion, setCurrentQuestion] = useState(1)
-  // let currentSelection = document.querySelector('.active input:checked') || null
-  // useEffect(() => {
-  //   if(currentSelection){
-  //     document.querySelector('.next').disabled=false
-  //   }
-  // },[currentSelection])
 
-  
+  // Enable scrolling through questions
+  const [currentQuestion, setCurrentQuestion] = useState(1)
   const nextQuestion = () => {
     setCurrentQuestion(currentQuestion+1)
   }
   const prevQuestion = () => {
     setCurrentQuestion(currentQuestion-1)
   }
-  
   useEffect(() => {
     const questions = document.querySelectorAll('.question');
     questions.forEach(question => {
-      question.classList.remove('active');
       if(question.id==currentQuestion){
-        console.log(question.id, currentQuestion)
         question.classList.add('active')
+      }
+      else{
+        question.classList.remove('active');
       }
     })
   },[currentQuestion])
+
+  // Get data from local storage
+  useEffect(() => {
+    let myQuizAnswers= JSON.parse(localStorage.getItem('myQuizAnswers')) || [
+      {answer: '',score: 0},
+      {answer: '',score: 0},
+      {answer: '',score: 0},
+      {answer: '',score: 0},
+      {answer: '',score: 0}
+    ]
+    myQuizAnswers.forEach(question => {
+      if(question.answer){
+        document.querySelector(`#${question.answer}`).checked=true
+      }
+    })
+
+    // Save data to local storage
+    const questions = document.querySelectorAll('.question')
+    questions.forEach(question => {
+      let inputs = question.querySelectorAll('input');
+      inputs.forEach(input => {
+        input.addEventListener('change', () => {
+          if(input.checked===true){
+            myQuizAnswers[question.id - 1].answer = input.id
+            myQuizAnswers[question.id - 1].score = parseInt(input.value)
+            localStorage.setItem('myQuizAnswers', JSON.stringify(myQuizAnswers));
+          }
+        })
+      })
+    })
+  },[])
 
   return (
     <div>
