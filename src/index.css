@@ -19,19 +19,17 @@ body {
 .question{
   display: none;
 }
-
 .active{
   display: block;
+}
+.question label{
+  padding-right: 5px;
 }
 
 .actions{
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
-}
-
-.hidden{
-  display: none;
 }
 
 .barChart{
