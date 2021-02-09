@@ -1,8 +1,37 @@
+import { useEffect, useState} from 'react'
 import Question from './question'
 
 const Home = () => {
+  const [currentQuestion, setCurrentQuestion] = useState(1)
+  // let currentSelection = document.querySelector('.active input:checked') || null
+  // useEffect(() => {
+  //   if(currentSelection){
+  //     document.querySelector('.next').disabled=false
+  //   }
+  // },[currentSelection])
+
+  
+  const nextQuestion = () => {
+    setCurrentQuestion(currentQuestion+1)
+  }
+  const prevQuestion = () => {
+    setCurrentQuestion(currentQuestion-1)
+  }
+  
+  useEffect(() => {
+    const questions = document.querySelectorAll('.question');
+    questions.forEach(question => {
+      question.classList.remove('active');
+      if(question.id==currentQuestion){
+        console.log(question.id, currentQuestion)
+        question.classList.add('active')
+      }
+    })
+  },[currentQuestion])
+
   return (
     <div>
+      <h1>Question {currentQuestion}</h1>
       <div className="questions">
         <Question 
           number="1"
@@ -14,6 +43,8 @@ const Home = () => {
           answer2score="10"
           answer3="12-15 years"
           answer3score="15"
+          nextQuestion={nextQuestion}
+          prevQuestion={prevQuestion}
           />
         <Question 
           number="2"
@@ -25,6 +56,8 @@ const Home = () => {
           answer2score="15"
           answer3="Up to 4,000 kg"
           answer3score="5"
+          nextQuestion={nextQuestion}
+          prevQuestion={prevQuestion}
           />
         <Question 
           number="3"
@@ -36,6 +69,8 @@ const Home = () => {
           answer2score="10"
           answer3="Up to 1m long"
           answer3score="5"
+          nextQuestion={nextQuestion}
+          prevQuestion={prevQuestion}
           />
         <Question 
           number="4"
@@ -47,6 +82,8 @@ const Home = () => {
           answer2score="15"
           answer3="5m"
           answer3score="5"
+          nextQuestion={nextQuestion}
+          prevQuestion={prevQuestion}
           />
         <Question 
           number="5"
@@ -58,16 +95,9 @@ const Home = () => {
           answer2score="15"
           answer3="20-40 years"
           answer3score="10"
+          nextQuestion={nextQuestion}
+          prevQuestion={prevQuestion}
           />
-        </div>
-        <div className="actions">
-          <div>
-            <button className="prev hidden">Previous</button>
-          </div>
-          <div>
-            <button className="next">Next</button>
-            <button className="submit hidden">Submit</button>
-          </div>
         </div>
     </div>
   );
