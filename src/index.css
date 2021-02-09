@@ -15,3 +15,21 @@ body {
   padding: 20px;
   background-color: white;
 }
+
+.question{
+  display: none;
+}
+
+.active{
+  display: block;
+}
+
+.actions{
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.hidden{
+  display: none;
+}
