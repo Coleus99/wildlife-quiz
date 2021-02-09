@@ -1,15 +1,14 @@
-import React from 'react';
-
-// Their rating:
-// 0 - 33% = below average
-// 34% - 66% = average
-// 67% - 10% = above average
-// A simple bar chart showing their score per answer
-// Output their score and rating to a PDF
+import { Link } from 'react-router-dom'
+import { jsPDF } from "jspdf";
 
 const Results = () => {
-  let myQuizAnswers= JSON.parse(localStorage.getItem('myQuizAnswers'));
-  console.log(myQuizAnswers)
+  let myQuizAnswers= JSON.parse(localStorage.getItem('myQuizAnswers'))|| [
+    {answer: '',score: 0},
+    {answer: '',score: 0},
+    {answer: '',score: 0},
+    {answer: '',score: 0},
+    {answer: '',score: 0}
+  ]
   let totalScore = 0;
   myQuizAnswers.forEach(question => {
     totalScore+= question.score;
@@ -24,6 +23,18 @@ const Results = () => {
   else{
     rating = 'Above average'
   };
+
+  const printPdf = () => {
+    const doc = new jsPDF();
+    doc.text(`Score: ${percentageScore}%`, 10, 10);
+    doc.text(`Rating: ${rating}`, 10, 20);
+    doc.save("a4.pdf");
+  }
+
+  const clear = () => {
+    localStorage.clear()
+  }
+
   return (
     <div>
       <h1>Results</h1>
@@ -51,6 +62,9 @@ const Results = () => {
           <progress id="q5" value={myQuizAnswers[4].score} max="15"></progress>
         </div>
       </div>
+      <button onClick={printPdf}>Print PDF</button>
+      <Link to="/"><button>Amend your answers</button></Link>
+      <Link to="/"><button onClick={clear}>Clear & start over</button></Link>
     </div>
   );
 }
