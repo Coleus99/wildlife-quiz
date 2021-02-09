@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/wildlife-quiz/static/css/main.745478d2.chunk.css",
+    "main.js": "/wildlife-quiz/static/js/main.10698318.chunk.js",
+    "main.js.map": "/wildlife-quiz/static/js/main.10698318.chunk.js.map",
+    "runtime-main.js": "/wildlife-quiz/static/js/runtime-main.ef55fe5d.js",
+    "runtime-main.js.map": "/wildlife-quiz/static/js/runtime-main.ef55fe5d.js.map",
+    "static/js/2.f5232bfa.chunk.js": "/wildlife-quiz/static/js/2.f5232bfa.chunk.js",
+    "static/js/2.f5232bfa.chunk.js.map": "/wildlife-quiz/static/js/2.f5232bfa.chunk.js.map",
+    "static/js/3.2d9e7204.chunk.js": "/wildlife-quiz/static/js/3.2d9e7204.chunk.js",
+    "static/js/3.2d9e7204.chunk.js.map": "/wildlife-quiz/static/js/3.2d9e7204.chunk.js.map",
+    "static/js/4.d4b97194.chunk.js": "/wildlife-quiz/static/js/4.d4b97194.chunk.js",
+    "static/js/4.d4b97194.chunk.js.map": "/wildlife-quiz/static/js/4.d4b97194.chunk.js.map",
+    "static/js/5.61f43f85.chunk.js": "/wildlife-quiz/static/js/5.61f43f85.chunk.js",
+    "static/js/5.61f43f85.chunk.js.map": "/wildlife-quiz/static/js/5.61f43f85.chunk.js.map",
+    "static/js/6.81afb00e.chunk.js": "/wildlife-quiz/static/js/6.81afb00e.chunk.js",
+    "static/js/6.81afb00e.chunk.js.map": "/wildlife-quiz/static/js/6.81afb00e.chunk.js.map",
+    "index.html": "/wildlife-quiz/index.html",
+    "static/css/main.745478d2.chunk.css.map": "/wildlife-quiz/static/css/main.745478d2.chunk.css.map",
+    "static/js/2.f5232bfa.chunk.js.LICENSE.txt": "/wildlife-quiz/static/js/2.f5232bfa.chunk.js.LICENSE.txt",
+    "static/js/3.2d9e7204.chunk.js.LICENSE.txt": "/wildlife-quiz/static/js/3.2d9e7204.chunk.js.LICENSE.txt",
+    "static/js/4.d4b97194.chunk.js.LICENSE.txt": "/wildlife-quiz/static/js/4.d4b97194.chunk.js.LICENSE.txt",
+    "static/js/5.61f43f85.chunk.js.LICENSE.txt": "/wildlife-quiz/static/js/5.61f43f85.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ef55fe5d.js",
+    "static/js/3.2d9e7204.chunk.js",
+    "static/css/main.745478d2.chunk.css",
+    "static/js/main.10698318.chunk.js"
+  ]
+}
