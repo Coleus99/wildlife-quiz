@@ -5,10 +5,12 @@ import Results from './components/results'
 function App() {
   return (
     <BrowserRouter>
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route exact path='/results' component={Results} />
-      </Switch>
+      <div className="container">
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/results' component={Results} />
+        </Switch>
+      </div>
     </BrowserRouter>
   );
 }
