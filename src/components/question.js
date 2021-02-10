@@ -1,3 +1,4 @@
+import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Question = (props) => {
@@ -18,7 +19,7 @@ const Question = (props) => {
         </div>
         <div>
           {props.number<5 ? <button className="next" onClick={props.nextQuestion}>Next</button> : null}
-          {props.number==5 ? <Link to='/results'><button className="submit">Submit</button></Link> : null}
+          {props.number==5 ? <Link to='/wildlife-quiz/results'><button className="submit">Submit</button></Link> : null}
         </div>
     </div>
   </div>

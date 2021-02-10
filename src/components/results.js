@@ -38,7 +38,7 @@ const Results = () => {
 
   return (
     <div>
-      <h1>Results</h1>
+      <h2>Results</h2>
       <p>Score: {percentageScore}%</p>
       <p>Rating: {rating}</p>
       <div className="barChart">
@@ -64,8 +64,8 @@ const Results = () => {
         </div>
       </div>
       <button onClick={printPdf}>Print PDF</button>
-      <Link to="/"><button>Amend your answers</button></Link>
-      <Link to="/"><button onClick={clear}>Clear & start over</button></Link>
+      <Link to="/wildlife-quiz"><button>Amend your answers</button></Link>
+      <Link to="/wildlife-quiz"><button onClick={clear}>Clear & start over</button></Link>
     </div>
   );
 }

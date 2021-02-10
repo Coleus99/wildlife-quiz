@@ -56,7 +56,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Question {currentQuestion}</h1>
+      <h2>Question {currentQuestion}</h2>
       <div className="questions">
         <Question 
           number="1"

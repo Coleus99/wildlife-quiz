@@ -5,11 +5,12 @@ import Results from './components/results'
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <div className="container">
+        <h1>Animal Quiz</h1>
         <Switch>
-          <Route exact path='/' component={Home} />
-          <Route exact path='/results' component={Results} />
+          <Route exact path='/wildlife-quiz/' component={Home} />
+          <Route exact path='/wildlife-quiz/results' component={Results} />
         </Switch>
       </div>
     </BrowserRouter>
